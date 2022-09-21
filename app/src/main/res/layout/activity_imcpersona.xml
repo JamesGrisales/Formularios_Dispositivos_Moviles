@@ -5,7 +5,9 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/imc"
-    tools:context=".IMCPersona">
+    tools:context=".IMCPersona"
+    >
+
 
     <TextView
         android:id="@+id/txtimc"
@@ -40,50 +42,52 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="290dp"
         android:layout_marginEnd="75dp"
-        android:layout_marginBottom="622dp"
         android:fontFamily="cursive"
         android:text="Altura"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.118" />
 
     <EditText
         android:id="@+id/editPeso"
         android:layout_width="167dp"
         android:layout_height="48dp"
-        android:layout_marginEnd="48dp"
+        android:layout_marginEnd="44dp"
         android:ems="10"
         android:inputType="textPersonName"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/editAltura"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.179"
+        app:layout_constraintVertical_bias="0.152"
         tools:ignore="SpeakableTextPresentCheck" />
 
     <EditText
         android:id="@+id/editAltura"
-        android:layout_width="158dp"
-        android:layout_height="48dp"
-        android:layout_marginStart="237dp"
-        android:layout_marginTop="122dp"
+        android:layout_width="157dp"
+        android:layout_height="45dp"
+        android:layout_marginTop="104dp"
         android:ems="10"
         android:inputType="textPersonName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.937"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="SpeakableTextPresentCheck" />
+        tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
 
     <TextView
         android:id="@+id/txtresultadoimc"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="568dp"
+        android:layout_marginTop="540dp"
         android:fontFamily="cursive"
         android:text="IMC"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -95,8 +99,23 @@
         android:inputType="textPersonName"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txtresultadoimc"
+        app:layout_constraintVertical_bias="0.0"
         tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
+
+    <Button
+        android:id="@+id/btncalcular"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:backgroundTint="@color/ColorDos"
+        android:text="Calcular IMC"
+        android:textColorHighlight="#EFE9E9"
+        android:textColorLink="#ECE8E8"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editresultadoimc" />
 </androidx.constraintlayout.widget.ConstraintLayout>

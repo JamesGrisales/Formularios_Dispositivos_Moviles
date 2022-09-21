@@ -4,35 +4,38 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:layout_gravity="center|bottom"
+    android:layout_gravity="bottom|center|end"
     android:background="@color/black"
+    android:orientation="vertical"
     tools:context=".Calculadora">
 
 
-
-<TextView
-    android:id="@+id/proceso"
-    android:layout_width="match_parent"
-    android:layout_height="100dp"
-    android:text="0"
-    android:textSize="30sp"
-    android:gravity="end"
-    tools:ignore="MissingConstraints" />
     <TextView
         android:id="@+id/resultado"
         android:layout_width="match_parent"
-        android:layout_height="100dp"
-        android:text="0"
-        android:textSize="30sp"
-        android:gravity="end"
-        tools:ignore="MissingConstraints" />
+        android:layout_height="60dp"
+        android:gravity="bottom|end"
+        android:hint="0"
+        android:textColor="#F6F1F1"
+        android:textColorHint="#EFE9E9"
+        android:textSize="50sp" />
+
+    <TextView
+        android:id="@+id/proceso"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:gravity="bottom|end"
+        android:hint="0"
+        android:textColor="#F6F1F1"
+        android:textColorHint="#F8F2F2"
+        android:textSize="50sp" />
+
     <GridLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:rowCount="5"
         android:columnCount="6"
         android:orientation="vertical"
+        android:rowCount="5"
         tools:ignore="MissingConstraints">
 
         <LinearLayout
@@ -41,206 +44,238 @@
             android:layout_height="100dp">
 
             <Button
-                android:id="@+id/porcentaje"
+                android:id="@+id/btnabrirparentesis"
                 style="@style/Widget.AppCompat.Button.Borderless.Colored"
                 android:layout_width="100dp"
                 android:layout_height="match_parent"
-                android:background="@color/ColorDos"
-                android:text="%"
-                android:textColor="#607D8B"
-                android:textSize="40dp" />
+                android:background="@color/purple_200"
+                android:onClick="precionarBotones"
+                android:text="("
+                android:textColor="#EEF1F3"
+                android:textColorHighlight="#44D9EC"
+                android:textSize="40dp"
+                tools:ignore="TextContrastCheck" />
 
             <Button
-                android:id="@+id/parentesis"
+                android:id="@+id/btncerrarparentesis"
                 style="@style/Widget.AppCompat.Button.Borderless.Colored"
                 android:layout_width="100dp"
                 android:layout_height="match_parent"
-                android:background="@color/ColorDos"
-                android:text="()"
-                android:textColor="#607D8B"
-                android:textSize="40dp" />
+                android:background="@color/purple_200"
+                android:backgroundTint="@color/purple_200"
+                android:onClick="clickOperacion"
+                android:text=")"
+                android:textColor="#F2F5F6"
+                android:textSize="40dp"
+                tools:ignore="TextContrastCheck" />
 
             <Button
-                android:id="@+id/Limpiar"
+                android:id="@+id/btnLimpiar"
                 style="@style/Widget.AppCompat.Button.Borderless.Colored"
                 android:layout_width="100dp"
                 android:layout_height="match_parent"
                 android:background="@color/ColorDos"
                 android:text="C"
-                android:textColor="#607D8B"
-                android:textSize="40dp" />
+                android:textColor="#E3EBEF"
+                android:textColorHighlight="#9D26B1"
+                android:textSize="40dp"
+                tools:ignore="TextContrastCheck" />
 
             <Button
-                android:id="@+id/borrar"
+                android:id="@+id/btnborrar"
                 style="@style/Widget.AppCompat.Button.Borderless.Colored"
                 android:layout_width="110dp"
                 android:layout_height="match_parent"
                 android:background="@color/ColorDos"
                 android:text="b"
-                android:textColor="#607D8B"
-                android:textSize="40dp" />
+                android:textColor="#E6ECEF"
+                android:textSize="40dp"
+                tools:ignore="TextContrastCheck" />
 
         </LinearLayout>
+
         <LinearLayout
 
             android:layout_width="match_parent"
             android:layout_height="100dp">
 
             <Button
-                android:id="@+id/txtsiete"
+                android:id="@+id/btnsiete"
                 style="@style/Widget.AppCompat.Button.Borderless.Colored"
                 android:layout_width="100dp"
                 android:layout_height="match_parent"
+                android:onClick="precionarBotones"
                 android:text="7"
                 android:textSize="40dp" />
 
             <Button
-                android:id="@+id/txtocho"
+                android:id="@+id/btnocho"
                 style="@style/Widget.AppCompat.Button.Borderless.Colored"
                 android:layout_width="100dp"
                 android:layout_height="match_parent"
+                android:onClick="precionarBotones"
                 android:text="8"
                 android:textSize="40dp" />
 
             <Button
-                android:id="@+id/txtnueve"
+                android:id="@+id/btnnueve"
                 style="@style/Widget.AppCompat.Button.Borderless.Colored"
                 android:layout_width="100dp"
                 android:layout_height="match_parent"
+                android:onClick="precionarBotones"
                 android:text="9"
                 android:textSize="40dp" />
 
             <Button
-                android:id="@+id/multiplicar"
+                android:id="@+id/btnmultiplicar"
                 style="@style/Widget.AppCompat.Button.Borderless.Colored"
                 android:layout_width="110dp"
                 android:layout_height="match_parent"
                 android:background="@color/ColorDos"
-                android:text="X"
-                android:textColor="#607D8B"
-                android:textSize="40dp" />
+                android:onClick="clickOperacion"
+                android:text="*"
+                android:textColor="#E5E7E8"
+                android:textSize="40dp"
+                tools:ignore="TextContrastCheck" />
 
 
         </LinearLayout>
+
         <LinearLayout
 
             android:layout_width="match_parent"
             android:layout_height="100dp">
 
             <Button
-                android:id="@+id/txtcuatro"
+                android:id="@+id/btncuatro"
                 style="@style/Widget.AppCompat.Button.Borderless.Colored"
                 android:layout_width="100dp"
                 android:layout_height="match_parent"
+                android:onClick="precionarBotones"
                 android:text="4"
                 android:textSize="40dp" />
 
             <Button
-                android:id="@+id/txtcinco"
+                android:id="@+id/btncinco"
                 style="@style/Widget.AppCompat.Button.Borderless.Colored"
                 android:layout_width="100dp"
                 android:layout_height="match_parent"
+                android:onClick="precionarBotones"
                 android:text="5"
                 android:textSize="40dp" />
 
             <Button
-                android:id="@+id/txtseis"
+                android:id="@+id/btnseis"
                 style="@style/Widget.AppCompat.Button.Borderless.Colored"
                 android:layout_width="100dp"
                 android:layout_height="match_parent"
+                android:onClick="precionarBotones"
                 android:text="6"
                 android:textSize="40dp" />
 
             <Button
-                android:id="@+id/txtrestar"
+                android:id="@+id/btnrestar"
                 style="@style/Widget.AppCompat.Button.Borderless.Colored"
                 android:layout_width="110dp"
                 android:layout_height="match_parent"
                 android:background="@color/ColorDos"
+                android:onClick="clickOperacion"
                 android:text="-"
-                android:textColor="#607D8B"
-                android:textSize="40dp" />
+                android:textColor="#ECF0F3"
+                android:textSize="40dp"
+                tools:ignore="TextContrastCheck" />
 
 
         </LinearLayout>
+
         <LinearLayout
 
             android:layout_width="match_parent"
             android:layout_height="100dp">
 
             <Button
-                android:id="@+id/txtuno"
+                android:id="@+id/btnuno"
                 style="@style/Widget.AppCompat.Button.Borderless.Colored"
                 android:layout_width="100dp"
                 android:layout_height="match_parent"
+                android:onClick="precionarBotones"
                 android:text="1"
                 android:textSize="40dp" />
 
             <Button
-                android:id="@+id/txtdos"
+                android:id="@+id/btndos"
                 style="@style/Widget.AppCompat.Button.Borderless.Colored"
                 android:layout_width="100dp"
                 android:layout_height="match_parent"
+                android:onClick="precionarBotones"
                 android:text="2"
                 android:textSize="40dp" />
 
             <Button
-                android:id="@+id/txttres"
+                android:id="@+id/btntres"
                 style="@style/Widget.AppCompat.Button.Borderless.Colored"
                 android:layout_width="100dp"
                 android:layout_height="match_parent"
+                android:onClick="precionarBotones"
                 android:text="3"
                 android:textSize="40dp" />
 
             <Button
-                android:id="@+id/txtsumar"
+                android:id="@+id/btnsumar"
                 style="@style/Widget.AppCompat.Button.Borderless.Colored"
                 android:layout_width="110dp"
                 android:layout_height="match_parent"
                 android:background="@color/ColorDos"
+                android:onClick="clickOperacion"
                 android:text="+"
-                android:textColor="#607D8B"
-                android:textSize="40dp" />
+                android:textColor="#F5F6F6"
+                android:textSize="40dp"
+                tools:ignore="TextContrastCheck" />
 
         </LinearLayout>
+
         <LinearLayout
 
             android:layout_width="match_parent"
             android:layout_height="100dp">
 
             <Button
-                android:id="@+id/txtdividir"
+                android:id="@+id/btndividir"
                 style="@style/Widget.AppCompat.Button.Borderless.Colored"
                 android:layout_width="100dp"
                 android:layout_height="match_parent"
+                android:onClick="clickOperacion"
                 android:text="/"
                 android:textSize="40dp" />
 
             <Button
-                android:id="@+id/txtcero"
+                android:id="@+id/btncero"
                 style="@style/Widget.AppCompat.Button.Borderless.Colored"
                 android:layout_width="100dp"
                 android:layout_height="match_parent"
+                android:onClick="precionarBotones"
                 android:text="0"
                 android:textSize="40dp" />
 
             <Button
-                android:id="@+id/txtpunto"
+                android:id="@+id/btnpunto"
                 style="@style/Widget.AppCompat.Button.Borderless.Colored"
                 android:layout_width="100dp"
                 android:layout_height="match_parent"
+                android:onClick="precionarBotones"
                 android:text="."
                 android:textSize="40dp" />
 
             <Button
-                android:id="@+id/txtigual"
+                android:id="@+id/btnigual"
                 style="@style/Widget.AppCompat.Button.Borderless.Colored"
                 android:layout_width="110dp"
                 android:layout_height="match_parent"
                 android:background="@color/ColorDos"
                 android:text="="
-                android:textColor="#607D8B"
-                android:textSize="40dp" />
+                android:textColor="#E6ECEF"
+                android:textSize="40dp"
+                tools:ignore="TextContrastCheck" />
 
 
         </LinearLayout>
